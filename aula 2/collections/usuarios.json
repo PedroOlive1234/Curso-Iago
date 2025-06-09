@@ -1,0 +1,10 @@
+{
+  "schema": {},
+  "config": {},
+  "data": [
+    {
+      "name": "João",
+      "age": 30
+    }
+  ]
+}
