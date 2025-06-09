@@ -3,7 +3,7 @@ const path = require('path');
 
 const COLLECTIONS_DIR = path.join(__dirname, 'collections');
 
-// Garante que a pasta collections exista
+
 async function ensureCollectionsDir() {
   try {
     await fs.mkdir(COLLECTIONS_DIR, { recursive: true });
@@ -12,7 +12,6 @@ async function ensureCollectionsDir() {
   }
 }
 
-// Funções de Collection
 async function createCollection(name, overwrite = false) {
   await ensureCollectionsDir();
   const filePath = path.join(COLLECTIONS_DIR, `${name}.json`);
@@ -55,7 +54,7 @@ async function deleteCollection(name) {
   }
 }
 
-// Funções de Document
+
 async function createDocument(collectionName, documentData) {
   if (!collectionName || !documentData) {
     console.log('Collection e documento são obrigatórios.');
