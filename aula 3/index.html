@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Games Wiki</h1>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Jogos</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="game-navbar">
+        <div id="game-nav-list"></div>
+    </nav>
+
+    <main>
+        <section class="game-details">
+            <h2 id="game-name">Nome do Jogo</h2>
+            <p id="game-info">Gênero: 00/00/0000 - Autor 1, Autor 2</p>
+
+            <div class="main-content">
+                <div class="wallpaper-section">
+                    <img id="main-wallpaper" src="https://via.placeholder.com/600x400" alt="Wallpaper do jogo">
+                </div>
+                <div class="buy-section">
+                    <h3>Disponível em:</h3>
+                    <ul id="buy-links">
+                        <li>Steam: R$00,00</li>
+                        <li>Steam: R$00,00</li>
+                        <li>Steam: R$00,00</li>
+                        <li>Steam: R$00,00</li>
+                        <li>Steam: R$00,00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="music-section">
+                <h3>Músicas</h3>
+                <div id="music-list">
+                    <!-- Music items will be inserted here by JS -->
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h3>Galeria</h3>
+                <div class="gallery-content">
+                    <div class="main-gallery-image">
+                        <img id="gallery-main-display" src="https://via.placeholder.com/600x400" alt="Imagem em destaque da galeria">
+                    </div>
+                    <div class="thumbnail-gallery-images">
+                        <img src="https://via.placeholder.com/150" alt="img da galeria">
+                        <img src="https://via.placeholder.com/150" alt="img da galeria">
+                        <img src="https://via.placeholder.com/150" alt="img da galeria">
+                        <img src="https://via.placeholder.com/150" alt="img da galeria">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
