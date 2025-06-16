@@ -303,14 +303,14 @@ const jogos = [
     }
 ];
 
-// Função para exibir os detalhes do jogo
+
 function displayGameDetails(game) {
     document.getElementById('game-name').textContent = game.nome;
     document.getElementById('game-info').textContent = `Gênero: ${game.estilo} / Lançamento: ${game.lancamento} - Autores: ${game.autores.join(', ')}`;
     document.getElementById('main-wallpaper').src = game.wallpapers[0].url;
 
     const buyLinksUl = document.getElementById('buy-links');
-    buyLinksUl.innerHTML = ''; // Limpa os links existentes
+    buyLinksUl.innerHTML = ''; 
     for (const store in game.comprarEm) {
         const li = document.createElement('li');
         li.textContent = `${store}: R$${game.comprarEm[store].preco.toFixed(2)}`;
@@ -318,7 +318,7 @@ function displayGameDetails(game) {
     }
 
     const musicListDiv = document.getElementById('music-list');
-    musicListDiv.innerHTML = ''; // Limpa as músicas existentes
+    musicListDiv.innerHTML = '';
     game.musicas.forEach(music => {
         const musicItem = document.createElement('div');
         musicItem.classList.add('music-item');
@@ -336,7 +336,7 @@ function displayGameDetails(game) {
     galleryMainDisplay.src = game.wallpapers[0].url;
     galleryMainDisplay.alt = game.wallpapers[0].nome;
 
-    thumbnailGalleryImagesDiv.innerHTML = ''; // Limpa as miniaturas existentes
+    thumbnailGalleryImagesDiv.innerHTML = ''; 
     game.wallpapers.slice(1).forEach(wallpaper => {
         const img = document.createElement('img');
         img.src = wallpaper.url;
@@ -349,26 +349,24 @@ function displayGameDetails(game) {
     });
 }
 
-// Event listeners para a lista de jogos
+
 document.addEventListener('DOMContentLoaded', () => {
     const gameNavListDiv = document.getElementById('game-nav-list');
-    gameNavListDiv.innerHTML = ''; // Limpa qualquer conteúdo estático, embora não haja no novo HTML
+    gameNavListDiv.innerHTML = ''; 
 
     jogos.forEach(game => {
         const a = document.createElement('a');
         a.textContent = game.nome;
-        a.href = "#"; // Links vazios por enquanto, ou você pode adicionar IDs de seção
+        a.href = "#";
         a.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o comportamento padrão do link
+            e.preventDefault();
             displayGameDetails(game);
-            // Opcional: Adicionar uma classe 'active' para o jogo selecionado
             Array.from(gameNavListDiv.children).forEach(child => child.classList.remove('active'));
             a.classList.add('active');
         });
         gameNavListDiv.appendChild(a);
     });
 
-    // Exibir o primeiro jogo por padrão e adicionar classe active
     if (jogos.length > 0) {
         displayGameDetails(jogos[0]);
         if (gameNavListDiv.firstElementChild) {
